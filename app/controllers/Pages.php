@@ -10,7 +10,7 @@ class Pages extends Controller
 
     public function index(){
         $data = array(
-            'title' => 'Welcome to Pages',
+            'title' => 'Welcome to KPR',
             'content' => 'Pages index view is loaded by MVC'
         );
         $this->view('pages/index', $data);
