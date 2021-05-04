@@ -1,0 +1,41 @@
+* {
+    font-family: "Comic Sans MS";
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    color: lime;
+}
+
+body {
+    background-color: deeppink;
+}
+
+nav {
+    width: auto;
+    background-color: rgb(30,30,30);
+    padding: 20px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.title {
+    font-family: "Arial";
+}
+
+.container {
+    margin: 0 auto;
+    width: auto;
+    max-width: 1200px;
+}
+
+.container h1 {
+    border-bottom: 2px solid lime;
+    padding-bottom: 0.5rem;
+}
+
+p {
+    font-size: 12px;
+    font-style: italic;
+    color: lime;
+    padding-top: 1rem;
+}
