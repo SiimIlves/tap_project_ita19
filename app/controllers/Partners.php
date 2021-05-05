@@ -8,9 +8,10 @@ class Partners extends Controller
     }
 
     public function index(){
+        $partners => $this->pagesModel->getPartners();
         $data = array(
-            'title' => 'Welcome to KPR project',
-            'content' => 'Partners index view is loaded by MVC'
+            'title' => 'Koostööpartnerid'
+            'partners' => $partners
         );
         $this->view('partners/index', $data);
     }

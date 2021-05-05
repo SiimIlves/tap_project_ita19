@@ -1,4 +1,8 @@
 <?php require_once APPROOT.'/views/inc/header.php' ?>
+<?php
+echo '<pre';
+print_r($data);
+?>
 <h1><?php echo $data['title']; ?></h1>
 <!-- table -->
     <table class="table">
@@ -15,46 +19,18 @@
         </tr>
         </thead>
         <tbody>
+        <?php foreach ($data['partners'] as $partner):?>
         <tr>
-            <th scope="row">1</th>
-            <td>Mark Otto</td>
-            <td>69420</td>
-            <td>Mark@Otto.com</td>
-            <td>54302584</td>
-            <td>seinad</td>
-            <td>kipsseinad</td>
-            <td>üle Eesti</td>
+            <th scope="row"><?php echo $partner->id;?></th>
+            <td><?php echo $partner->name;?></td>
+            <td><?php echo $partner->registry;?></td>
+            <td><?php echo $partner->email;?></td>
+            <td><?php echo $partner->phone;?></td>
+            <td><?php echo $partner->activity;?></td>
+            <td><?php echo $partner->activitydetail;?></td>
+            <td><?php echo $partner->location;?></td>
         </tr>
-        <tr>
-            <th scope="row">2</th>
-            <td>Mark Otto</td>
-            <td>69420</td>
-            <td>Mark@Otto.com</td>
-            <td>54302584</td>
-            <td>seinad</td>
-            <td>puitseinad</td>
-            <td>üle Eesti</td>
-        </tr>
-        <tr>
-            <th scope="row">3</th>
-            <td>Margaret Otto</td>
-            <td>69420</td>
-            <td>info@hamilton.com</td>
-            <td>54302584</td>
-            <td>aknad</td>
-            <td>puitaknad</td>
-            <td>Tartumaa</td>
-        </tr>
-        <tr>
-            <th scope="row">4</th>
-            <td>John Smith</td>
-            <td>69420</td>
-            <td>John@Clark.com</td>
-            <td>54302584</td>
-            <td>aknad</td>
-            <td>plastaknad</td>
-            <td>Võrumaa</td>
-        </tr>
+        <?php endforeach;?>
         </tbody>
     </table>
 <?php require_once APPROOT.'/views/inc/footer.php' ?>
