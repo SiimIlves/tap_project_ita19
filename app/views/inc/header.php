@@ -11,5 +11,5 @@
     <title><?php echo PROJECT_NAME?></title>
 </head>
 <body>
-<div class="container">
     <?php require_once APPROOT. '/views/inc/navbar.php'; ?>
+    <div class="container">
