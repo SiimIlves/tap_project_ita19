@@ -21,7 +21,7 @@ class Core
             $this->currentMethod = $url[1];
             unset($url[1]);
         }
-       $this->params = $url ? array_values($url) : [];
+        $this->params = $url ? array_values($url) : [];
 
         call_user_func_array(array($this->currentController, $this->currentMethod), $this->params);
 
