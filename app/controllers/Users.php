@@ -25,33 +25,43 @@ class Users extends Controller
                 'email_err' => '',
                 'password_err' => '',
                 'confirm_password' => ''
-                if(emtpy($data['name'])){
-                    $data['name_err'] = "please enter the name";
-                }
-                if(emtpy($data['name'])){
-                    $data['email_err'] = "please enter the email";
-                } else if(!filter_var($data['email'], FILTER_VALIDATE_EMAIL)){
-                    $data['email_err'] = "please enter a valid email";
-                } else if($this->usersModel->findUserByEmail($data['email'])){
-                    $data['email_err'] = 'Email is already taken';
-                }
-                if(emtpy($data['name'])){
-                    $data['password_err'] = "please enter a password";
-                } else if(strlen($data['password'])<6) {
-                    $data['password_err'] = 'Password must consist of at least 6 characters.';
-                }
-                if(emtpy($data['name'])){
-                    $data['confirm_password_err'] = "please confirm the password";
-                } else if(strlen($data['confirm_password'])<6) {
-                    $data['confirm_password_err'] = 'Password must consist of at least 6 characters.';
-                } else if($data[password] !== $data['confirm_password']){
-                    $data['confirm_password_err'] = 'Passwords do not match';
-                }
             );
+            if(emtpy($data['name'])){
+                $data['name_err'] = "please enter the name";
+            }
+            if(emtpy($data['email'])){
+                $data['email_err'] = "please enter the email";
+            } else if(!filter_var($data['email'], FILTER_VALIDATE_EMAIL)){
+                $data['email_err'] = "please enter a valid email";
+            } else if($this->usersModel->findUserByEmail($data['email'])){
+                $data['email_err'] = 'Email is already taken';
+            }
+            if(emtpy($data['password'])){
+                $data['password_err'] = "please enter a password";
+            } else if(strlen($data['password'])<6) {
+                $data['password_err'] = 'Password must consist of at least 6 characters.';
+            }
+            if(emtpy($data['confirm_password'])){
+                $data['confirm_password_err'] = "please confirm the password";
+            } else if(strlen($data['confirm_password'])<6) {
+                $data['confirm_password_err'] = 'Password must consist of at least 6 characters.';
+            } else if($data[password] !== $data['confirm_password']){
+                $data['confirm_password_err'] = 'Passwords do not match';
+            }
             print_r($data);
         } else {
-            $this->view('users/register');
+            $data = array(
+                'name' => '',
+                'email' => '',
+                'password' => '',
+                'confirm_password' => '',
+                'name_err' => '',
+                'email_err' => '',
+                'password_err' => '',
+                'confirm_password_err' => ''
+            );
         }
+            $this->view('users/register');
     }
 
     public function login()
