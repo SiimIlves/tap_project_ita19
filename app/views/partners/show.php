@@ -1,9 +1,5 @@
 <?php require_once APPROOT.'/views/inc/header.php' ?>
-<?php
-echo '<pre';
-print_r($data);
-?>
-<h1><?php echo $data['title']; ?></h1>
+<h1>Detailne info</h1>
 <!-- table -->
     <table class="table">
         <thead class="thead-dark">
@@ -20,17 +16,14 @@ print_r($data);
         </tr>
         </thead>
         <tbody>
-        <?php foreach ($data['partners'] as $partner):?>
         <tr>
-            <th scope="row"><?php echo $partner->partner_id;?></th>
-            <td><?php echo $partner->name;?></td>
-            <td><?php echo $partner->registry;?></td>
-            <td><?php echo $partner->email;?></td>
-            <td><?php echo $partner->phone;?></td>
-            <td><?php echo $partner->activity;?></td>
-            <td><?php echo $partner->activitydetail;?></td>
-            <td><?php echo $partner->location;?></td>
-            <td><a href="<?php echo URLROOT.'/partners/show/'.$partner->partner_id;?>">vaata</a></td>
+            <th scope="row"><?php echo $data['partner']->partner_id;?></th>
+            <td><?php echo $data['partner']->name;?></td>
+            <td><?php echo $data['partner']->registry;?></td>
+            <td><?php echo $data['partner']->email;?></td>
+            <td><?php echo $data['partner']->phone;?></td>
+            <td><?php echo $data['partner']->activity;?></td>
+            <td><?php echo $data['partner']->location;?></td>
         </tr>
         <?php endforeach;?>
         </tbody>
