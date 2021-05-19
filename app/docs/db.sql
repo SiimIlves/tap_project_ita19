@@ -47,21 +47,3 @@ INSERT INTO `partners` (`id`, `name`, `registry`, `email`, `phone`, `activity`, 
 (2, 'Otto Mark', 69420, 'otto@mark.com', '54302584', 'seinad', 'kipsseinad', 'üle Eesti'),
 (3, 'Margaret Otto', 69420, 'info@hamilton.com', '54302584', 'aknad', 'puitaknad', 'Tartumaa'),
 (4, 'John Smith', 69420, 'John@Clark.com', '54302584', 'aknad', 'plastaknad', 'Võrumaa');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `users`
---
-
-DROP TABLE IF EXISTS `users`;
-CREATE TABLE IF NOT EXISTS `users` (
-    `id` int(11) NOT NULL AUTO_INCREMENT,
-    `name` varchar(255) NOT NULL,
-    `email` varchar(255) NOT NULL,
-    `password` varchar(255) NOT NULL,
-    `created` date NOT NULL DEFAULT current_timestamp(),
-    PRIMARY KEY (`id`)
-    ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
-SET FOREIGN_KEY_CHECKS=1;
-COMMIT;
